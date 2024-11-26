@@ -1,3 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.container {
+    display:grid;
+    grid-template-columns: repeat(2,50%);
+    padding:20px;
+    gap:10px;
+    width: 1000px;
+}
+
+.box-info {
+    color:#090909;
+    display:flex;
+    flex-direction: column;
+    gap:50px;
+}
+
+.box-info > h1 {
+    text-align: left;
+    letter-spacing: 5px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap:25px
+}
+
+.data > p {
+    font-size: 1rem;
+}
+
+.data > p > i {
+    color:rgb(55, 160, 139);
+    margin-right: 10px;
+    font-size:25px;
+}
+
+
+
+.links {
+    display:flex;
+    gap:15px;
+}
+
+
+
+
+
+form {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    gap:15px;
+}
+
+.input-box {
+    position:relative;
+}
+
+.input-box > input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    outline:none;
+    background: rgba(255 255 255 / .1);
+    border:3px solid transparent;
+    letter-spacing: 1px;
+    transition:.3s;
+    color:#0b0b0b;
+    
+}
+
+.input-box > input::placeholder,
+.input-box > textarea::placeholder {
+    color:#090808;
+    
+}
+
+.input-box > input:focus::placeholder,
+.input-box > textarea:focus::placeholder {
+    color:transparent;
+}
+
+.input-box > input:focus,
+.input-box > textarea:focus {
+    border-bottom:3px solid rgb(167, 84, 17);
+    animation: shake .2s;
+}
+
+.input-box > textarea {
+    width: 100%;
+    height: 130px;
+    padding: 10px;
+    background: rgba(15, 102, 109, 0.1);
+    border:3px solid transparent;
+    letter-spacing: 1px;
+    outline: none;
+    transition:.3s;
+    color:#161414;
+    letter-spacing: 1.5px;
+}
+
+
+.input-box > i {
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+    right: 10px;
+    color:rgba(69, 22, 22, 0.3);
+    transition: .3s;
+}
+
+.input-box > input:focus ~ i {
+    color:crimson;
+}
+
+form > button {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    background: rgb(11, 11, 11);
+    color:#8d9eb8;
+    border:none;
+    transition: .1s;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+form > button:hover,
+.links > a:hover {
+    background: rgb(194, 190, 190);
+}
+
+@keyframes shake { 
+    0%, 100% {transform: translateX(0);} 
+    10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);} 
+    20%, 40%, 60%, 80% {transform: translateX(10px);} 
+ }
+
+
+@media screen and (max-width:600px) {
+    .container {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        gap:20px;
+    }
+
+    .box-info {
+        gap:15px;
+    }
+
+    .box-info > h1 {
+        font-size: 1.5rem;
+    }
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 *{
 	margin: 0;
@@ -5,11 +171,7 @@
 	box-sizing: border-box;
 	font-family: 'Open Sans';
 }
-body{
-	background-image: url(img/fondo.jpg);
-	background-size: cover;
-    
-}
+
 nav{
 	max-width: 900px;
 	margin: auto;
@@ -65,183 +227,3 @@ nav{
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
   }
-
-
-  
-  body::before{
-    content: '';
-    position: absolute;
-    width: 100%;
-    background: #1caecb;
-    clip-path: inset(47% 0 0 0);
-    z-index: -1;
-    height: 100%;
-  }
-  ::selection{
-    background:	#281f20;
-    color: #fff;
-  }
- 
-  .container .main-card{
-    display: flex;
-    justify-content: space-evenly;
-    width: 200%;
-    transition: 1s;
-  }
-  #two:checked ~ .main-card{
-    margin-left: -100%;
-  }
-  .container .main-card .cards{
-    width: calc(100% / 2 - 10px);
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 20px;
-    justify-content: space-between;
-  }
-  .main-card .cards .card{
-    width: calc(100% / 3 - 10px);
-    background: #fff;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
-    transition: all 0.4s ease;
-  }
-  .main-card .cards .card:hover{
-    transform: translateY(-15px);
-  }
-  .cards .card .content{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-  .cards .card .content .img{
-    height: 130px;
-    width: 130px;
-    border-radius: 50%;
-    padding: 3px;
-    background: #a8ad68;
-    margin-bottom: 14px;
-  }
-  .card .content .img img{
-    height: 100%;
-    width: 100%;
-    border: 3px solid #ffff;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  .card .content .name{
-    font-size: 20px;
-    font-weight: 500;
-  }
-  .card .content .job{
-    font-size: 20px;
-    color: #171313;
-  }
-  .card .content .media-icons{
-    margin-top: 10px;
-    display: flex;
-  
-  }
-  .media-icons a{
-    text-align: center;
-    line-height: 33px;
-    height: 35px;
-    width: 35px;
-    margin: 0 4px;
-    font-size: 14px;
-    color: #FFF;
-    border-radius: 50%;
-    border: 2px solid transparent;
-    background: #d51428;
-    transition: all 0.3s ease;
-  }
-  .media-icons a:hover{
-    color: #cf7376;
-    background-color: #fff;
-    border-color: #c97603;
-  }
-   .container .button{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 20px;
-  }
-  .button label{
-    height: 15px;
-    width: 15px;
-    border-radius: 20px;
-    background: #fff;
-    margin: 0 4px;
-    cursor: pointer;
-    transition: all 0.5s ease;
-  }
-  .button label.active{
-    width: 35px;
-  }
-  #one:checked ~ .button .one{
-    width: 35px;
-  }
-  #one:checked ~ .button .two{
-    width: 15px;
-  }
-  #two:checked ~ .button .one{
-    width: 15px;
-  }
-  #two:checked ~ .button .two{
-    width: 35px;
-  }
-  input[type="radio"]{
-    display: none;
-  }
-  @media (max-width: 768px) {
-    .main-card .cards .card{
-      margin: 20px 0 10px 0;
-      width: calc(100% / 2 - 10px);
-    }
-  }
-  @media (max-width: 600px) {
-    .main-card .cards .card{
-      /* margin: 20px 0 10px 0; */
-      width: 100%;
-    }
-  }
-
-
-  header{
-	background-color: #f2f2f2;
-	text-align: center;
-	padding: 25px;
-}
-nav a{
-	display: inline-block;
-	text-decoration: none;
-	color: #696969;
-	margin: 0 30px;
-	padding: 5px 15px;
-	border-radius: 30px;
-}
-nav a:hover {
-	background-color: #000;
-	color: #fff;
-}
-.encabezado-img{
-	background-image: url(https://cdn2.chicmagazine.com.mx/uploads/media/2022/09/26/accesorios-moda-haran-reina-otono.jpg);
-	background-size: cover;
-	height: 450px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	color: #060606;
-}
-.encabezado-img p{
-	font-size: 55px;
-}
-.encabezado-img h1{
-	font-size: 70px;
-	padding: 15px 0;
-
-}
